@@ -243,11 +243,12 @@ img {
 }
 
 .project-frame {
+    container-type: size;
     background-color: #161616;
     border: 1px solid #ffffff;
     border-radius: 5px;
     width: 552px;
-    height: 167px;
+    height: 190px;
     padding: 1.0rem .75rem;
     box-sizing: border-box;
 }
@@ -288,6 +289,23 @@ img {
 .button-row {
     margin-top: 1rem;
 }
+
+.thumbnail-container {
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.thumbnail {
+    height: 100%;
+    width: auto;
+    min-width: 100cqh;
+    max-width: 120cqh;
+    object-fit:cover;
+    object-position: center;
+}
+
 
 .no-pad {
     padding: 0;
