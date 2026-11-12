@@ -1,0 +1,42 @@
+---
+permalink: /nuke_mod_blog/homepage.html
+layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nuke Mod Blog</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/vs2015.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a href="../index.html">Home</a>
+
+        <h1>Nuke Mod Devblog</h1>
+
+        <p>This is the devblog for a nuke mod I revisit every now an then. Its a fun mess-around with thing and a great way to learn crazy wizard math.</p>
+
+        <a class="attachment" href="https://github.com/SpikeTrapBoomStudios/Spikes-Nukes-Mod" style="margin: 0 0 10px 0;">Github Repo for the Mod</a>
+
+        <div class="devblog-container">
+{%- for post in collections.posts %}
+            <a href="{{ post.page.fileSlug }}.html">
+                <div class="devblog-item">
+                    <img src="{{ post.data.thumbnail }}">
+                    <div class="devblog-text">
+                        <div class="devblog-title-block">
+                            <h1>{{ post.data.title | safe }}</h1>
+                            <h3>{{ post.date | slashDate }}</h3>
+                        </div>
+                        <hr>
+                        <p>{{ post.data.description | safe }}</p>
+                    </div>
+                </div>
+            </a>
+{%- endfor %}
+        </div>
+    </body>
+</html>
