@@ -1,0 +1,25 @@
+{
+  "name": "brendevr.github.io",
+  "version": "1.0.0",
+  "description": "Official home site of brendevr, aka Brendan LeVoy",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brendevr/brendevr.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/brendevr/brendevr.github.io/issues"
+  },
+  "homepage": "https://github.com/brendevr/brendevr.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.8"
+  }
+}

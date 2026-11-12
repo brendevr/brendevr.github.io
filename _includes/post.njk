@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{ title | safe }}</title>
+        <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/vs2015.min.css">
+    </head>
+    <body>
+        <div class="blog-post">
+            <a href="/nuke_mod_blog/homepage.html">Back</a>
+            <h1>{{ title | safe }}</h1>
+            <p>{{ description | safe }}{% if extraDescription %}<br>{{ extraDescription | safe }}{% endif %}</p>
+            <hr>
+
+            {{ content | safe }}
+
+            <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+            <script>
+                hljs.highlightAll();
+            </script>
+        </div>
+    </body>
+</html>
