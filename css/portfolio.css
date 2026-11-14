@@ -1,0 +1,119 @@
+.thumbnail-container {
+    float: left;
+    height: 100%;
+    overflow: hidden;
+    margin-right: 15px;
+    box-shadow: 0 0 10px 1px #000000;
+}
+
+.thumbnail {
+    height: 100%;
+    width: auto;
+    min-width: 100cqh;
+    max-width: 120cqh;
+    object-fit:cover;
+    object-position: center;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    grid-auto-rows: max-content;
+    align-items: start;
+    gap: 1.5rem;
+    padding-left: 3rem;
+    padding-right: 2rem;
+    margin-top: 1rem;
+}
+
+.project-frame {
+    container-type: size;
+    background-color: #161616;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    width: 100%;
+    height: 200px;
+    padding: 1.0rem .75rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 0 0 20px 2px #000000;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    height: 100%;
+}
+
+.project-title {
+    font-family: CourierPrime;
+    font-size: 1.9rem;
+    flex: none;
+}
+
+.project-author {
+    margin-top: -5px;
+    margin-bottom: 3px;
+    font-family: JetBrains;
+    font-size: 0.75rem;
+    flex: none;
+}
+
+.project-author::before {
+    content: "by ";
+}
+
+.project-desc {
+    min-height: 0;
+    flex: 1;
+    overflow: scroll;
+    background-color: rgba(31, 31, 31, 0.624);
+    border: 1px solid rgb(39, 39, 39);
+    margin: 0;
+    padding: 0.2rem;
+    padding-top: 0.05rem;
+}
+
+.button {
+}
+
+.button-row {
+    flex: none;
+}
+
+.no-pad {
+    padding: 0;
+}
+
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+        padding-right: 0;
+        gap: 1rem;
+    }
+    .project-frame {
+        container-type: normal;
+        height: auto;
+        padding: 1rem;
+        text-align: center;
+    }
+    .thumbnail-container {
+        float: none;
+        width: fit-content;
+        margin: 0 auto 0.75rem auto;
+    }
+    .thumbnail {
+        display: block;
+        min-width: 0;
+        max-width: 100%;
+        max-height: 200px;
+    }
+    .project-frame .project-desc {
+        overflow: visible;
+        text-align: left;
+        margin-top: 0.5rem;
+    }
+}

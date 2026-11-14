@@ -12,6 +12,7 @@ export default function (eleventyConfig) {
 	// posts) are NOT templates; index.html and boilerplate.html are copied through below.
 	// Folders and files that are copied to the output untouched:
 	eleventyConfig.addPassthroughCopy("style.css");
+	eleventyConfig.addPassthroughCopy("css");
 	eleventyConfig.addPassthroughCopy("assets");
 	eleventyConfig.addPassthroughCopy("index.html");
 	eleventyConfig.addPassthroughCopy("boilerplate.html");
