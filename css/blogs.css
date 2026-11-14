@@ -1,21 +1,3 @@
-.imgcap {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.imgcap img {
-    margin-right: 2em;
-    max-width: 100%;
-    height: auto;
-}
-
-.codecont {
-    border-radius: 5px;
-    font-size: 1.1em;
-}
-
 .devblog-container {
     width: 100%;
     margin: 0 auto;
@@ -54,6 +36,12 @@
     width: 100%;
 }
 
+.devblog-title-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .devblog-text h1 {
     margin: 0.5rem 0 0.25rem 0;
     font-size: 1.5rem;
@@ -67,12 +55,6 @@
     position: static;
 }
 
-.devblog-title-block {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 .devblog-text hr {
     border: none;
     width: 75%;
@@ -84,35 +66,6 @@
 .devblog-text p {
     margin: 0.5rem 0 0.5rem 0;
     font-size: 1rem;
-}
-
-@media (max-width: 768px) {
-    .imgcap {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .blog-post {
-        padding: 1.5rem 1rem;
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .devblog-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .devblog-item img {
-        align-self: center;
-        width: 30%;
-        margin: 0 0 0.5rem 0;
-    }
-    .devblog-text h1 {
-        font-size: 1.25rem;
-    }
-    .devblog-text p {
-        font-size: 0.9rem;
-    }
 }
 
 .attachment {
@@ -175,6 +128,23 @@
     margin-top: 20px;
 }
 
+.imgcap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.imgcap img {
+    margin-right: 2em;
+    max-width: 100%;
+    height: auto;
+}
+
+.codecont {
+    border-radius: 5px;
+    font-size: 1.1em;
+}
 
 @media (max-width: 768px) {
     html,
@@ -184,6 +154,10 @@
     body.blog-page {
         margin: 0;
     }
+    .blog-post {
+        padding: 1.5rem 1rem;
+        max-width: 100%;
+    }
     body.blog-page .blog-post {
         max-width: none;
         width: 100%;
@@ -192,5 +166,27 @@
         border-radius: 0;
         box-shadow: none;
         box-sizing: border-box;
+    }
+    .imgcap {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .devblog-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .devblog-item img {
+        align-self: center;
+        width: 30%;
+        margin: 0 0 0.5rem 0;
+    }
+    .devblog-text h1 {
+        font-size: 1.25rem;
+    }
+    .devblog-text p {
+        font-size: 0.9rem;
     }
 }
