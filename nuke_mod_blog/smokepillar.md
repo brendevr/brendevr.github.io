@@ -1,6 +1,6 @@
 ---
 title: "Part A: The Pillar of Smoke"
-thumbnail: smoke_pillar_thumb.png
+thumbnail: assets/thumb/smoke_pillar_thumb.png
 date: 2025-06-03
 description: "This one is simple. Anyone can understand it! Its just smoke. That goes up. Thats it."
 edu: true
@@ -22,7 +22,7 @@ The "pillar" of the mushroom cloud must achieve two things: it must curve upward
 `3^(2x - 3)`
 
 <div class="imgcap">
-    <img src="/assets/img/32x3.png" alt="Graph of the function">
+    <img src="/nuke_mod_blog/assets/32x3.png" alt="Graph of the function">
     <p>This graph represents the function. As shown, the smoke particles start with a smooth curve, then eventually rise almost vertically.</p>
 </div>
 

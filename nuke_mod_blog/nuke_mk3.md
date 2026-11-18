@@ -1,6 +1,6 @@
 ---
 title: "Nuke Mk.3"
-thumbnail: explosion.png
+thumbnail: assets/thumb/explosion.png
 date: 2025-06-11
 description: "Nukes are awesome, and instant. But in minecraft, they are slowwww. Can I fix that? Or at least make it better?"
 edu: false
@@ -56,4 +56,3 @@ Hey, thanks for reading all this. Or, if you just scrolled to the end, my Java f
     - duckduckgo.com (for the privacy-sound, many searches I made)<br>
 </p>
 
-<a class="attachment" href="NukeBase.java">NukeBase.java</a>

@@ -1,6 +1,6 @@
 ---
 title: "Pre-Math"
-thumbnail: pre_math_thumb.png
+thumbnail: assets/thumb/pre_math_thumb.png
 date: 2025-06-03
 description: "This page is a prerequisite sort of thing for math used throughout the other stuff."
 edu: true
@@ -13,7 +13,7 @@ Rotation matrices are a fun thing that make a point go from one place to another
 Look at this diagram to see what I mean:
 
 <div class="imgcap">
-    <img src="/assets/img/graph2.png">
+    <img src="/nuke_mod_blog/assets/graph2.png">
     <p>
         What I've done is visualized the rotation using a building. The red building is the initial position (3,2). After a rotation by π/2, we arrive at the
         coordinate (-2,3). This is done using the rotation matrix:<br>
@@ -30,4 +30,4 @@ Sin and Cos are two trigonometric functions that, when you're dealing with circl
 just think of a circle with a radius of 1, aka a unit circle. Now take any angle (in radians) that starts pointing at (1,0) and then goes counterclockwise.
 Sin will return the Y value while Cos will return the X value.
 
-<img src="/assets/img/unitcircle.png" style="filter: invert(); width: 50em;">
+<img src="/nuke_mod_blog/assets/unitcircle.png" style="filter: invert(); width: 50em;">

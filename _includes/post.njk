@@ -17,6 +17,14 @@
 
             {{ content | safe }}
 
+            {% if attachments[page.fileSlug] %}
+            <div class="attachments">
+                {% for file in attachments[page.fileSlug] %}
+                <a class="attachment" href="/nuke_mod_blog/assets/project_files/{{ page.fileSlug }}/{{ file }}">{{ file }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+
             <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
             <script>
                 hljs.highlightAll();

@@ -1,6 +1,6 @@
 ---
 title: "I hate OBJs, and you should too."
-thumbnail: objs_suck_thumb.png
+thumbnail: assets/thumb/objs_suck_thumb.png
 date: 2025-06-13
 description: "But maybe I can help you out, with what I learned from 10 hours of debugging one freaking model."
 edu: true
@@ -86,7 +86,7 @@ export it as an OBJ file, along with its mtl file (this will be created automati
 you are going to spend hours debugging, guaranteed. You need to setup a structure just like this:
 
 <div class="imgcap">
-    <img src="/nuke_mod_blog/project_struct_1.png" alt="Project structure...">
+    <img src="/nuke_mod_blog/assets/project_struct_1.png" alt="Project structure...">
     <p>You first need a .json file in the blockstates folder in your mod's resources directory. This json MUST HAVE THE SAME FILE NAME AS YOUR BLOCKS ID. Then, you
         need to put your obj and mtl file, as well as another json file inside of models/blocks. Again, the JSON must have the SAME FILE NAME AS YOUR BLOCKS ID. Lastly,
         you need to put your models texture(s) under textures/block, and ensure they are PNG because thats what Forge likes best.
@@ -140,10 +140,3 @@ If you do not do this, you will not have a texture.
 That concludes this lengthy tutorial. If you have any questions or errors, check out the full files for my mod either down below or at my github Repo. If something still
 doesnt work, shoot me an email, listed on the home page of this website. Good luck to you, happy modeling.
 
-<a class="attachment" href="objs_suck_resources/fatman_r1.obj">fatman_r1.obj</a>
-<a class="attachment" href="objs_suck_resources/fatman_r1.mtl">fatman_r1.mtl</a>
-<a class="attachment" href="objs_suck_resources/fat_man_block.json">fat_man_block.json</a>
-<a class="attachment" href="objs_suck_resources/_fat_man_block.json">fat_man_block.json</a>
-<a class="attachment" href="objs_suck_resources/fatman_tex.png">fatman_tex.png</a>
-<a class="attachment" href="objs_suck_resources/FatManNuke.java">FatManNuke.java</a>
-<a class="attachment" href="objs_suck_resources/ModBlocks.java">ModBlocks.java</a>

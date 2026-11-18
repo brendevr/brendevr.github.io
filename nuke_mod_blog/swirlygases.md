@@ -1,9 +1,9 @@
 ---
 title: "Part B: The Swirling Gases"
-thumbnail: swirly_gases_thumn.png
+thumbnail: assets/thumb/swirly_gases_thumn.png
 date: 2025-06-03
 description: "Nuclear mushroom clouds are cool (well actually really warm) and swirl around. But how can we simulate that... in minecraft?"
-extra-description: "This guide lays out the mathematical setup for creating a mushroom cloud. Let’s get swirling."
+extraDescription: "This guide lays out the mathematical setup for creating a mushroom cloud. Let’s get swirling."
 edu: true
 order: 3
 ---
@@ -23,12 +23,12 @@ This page is all about Part B; the swirly gas vortex thingy.
 
 Alright, time to model the swirly gases. Here’s a diagram to visualize what we’re dealing with:
 
-<img src="/assets/img/swirlywirly.png">
+<img src="/nuke_mod_blog/assets/swirlywirly.png">
 
 We use sine and cosine to calculate how much each particle moves. And since describing math with words alone is painful, here’s more diagrams. Hooray!
 
 <div class="imgcap">
-    <img src="/assets/img/simplesincosdisp.png">
+    <img src="/nuke_mod_blog/assets/simplesincosdisp.png">
     <p>
         By shifting a particle by (sin(angle), cos(angle)) as angle increases, we get a loop. At first, it looks more like a square than a circle, but don’t panic, we can just decrease the angle increment.
         Also, if you’re wondering why X is offset by sin and Y by cos (instead of the usual way), it’s so the particles move outward and then back in, meeting at a single point (which we can later tweak into a torus!).
@@ -36,7 +36,7 @@ We use sine and cosine to calculate how much each particle moves. And since desc
 </div>
 
 <div class="imgcap">
-    <img src="/assets/img/graph.png">
+    <img src="/nuke_mod_blog/assets/graph.png">
     <p>
         Here’s what different increment values look like. Each set has one less visible point than labeled due to the 0→2π loop. More points = smoother circle.
         In Minecraft, if you call <code>super.tick()</code> before displacement, it smooths out movement, so even Set 2 will look like it has way more than 10 points.
