@@ -10,7 +10,6 @@
 }
 
 .project-frame {
-    container-type: size;
     background-color: #161616;
     border: 1px solid #ffffff;
     border-radius: 5px;
@@ -20,23 +19,43 @@
     box-sizing: border-box;
     overflow: hidden;
     box-shadow: 0 0 20px 2px #000000;
+    position: relative;
 }
 
-.thumbnail-container {
+.thumbnail {
     float: left;
     height: 100%;
-    overflow: hidden;
     margin-right: 15px;
     box-shadow: 0 0 10px 1px #000000;
 }
 
-.thumbnail {
-    height: 100%;
-    width: auto;
-    min-width: 100cqh;
-    max-width: 120cqh;
-    object-fit:cover;
-    object-position: center;
+.stargazer-count {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.0rem;
+    background-color: #212830;
+    padding: 3px 5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 4px;
+    border: 1px solid #ffffff26;
+    box-shadow: 0 0 5px 4px #00000095;
+}
+
+.stargazer-count * {
+    margin: 0;
+}
+
+.stargazer-count span {
+    padding: 4px 0;
+    text-box: trim-both cap alphabetic;
+}
+
+.star-count-pill {
+    background-color: rgba(101, 108, 118, 0.2);
+    border-radius: 50px;
+    padding: 4px 10px !important;
 }
 
 .text-container {
@@ -53,12 +72,15 @@
 }
 
 .project-author {
-    margin-top: -5px;
-    margin-bottom: 3px;
+    margin-top: 0;
     font-family: JetBrains;
     font-size: 0.75rem;
     flex: none;
+    font-weight: 200;
+    line-height: 1rem;
 }
+
+.project-author b { font-weight: 800; }
 
 .project-author::before {
     content: "by ";
@@ -70,7 +92,7 @@
     overflow: scroll;
     background-color: rgba(31, 31, 31, 0.624);
     border: 1px solid rgb(39, 39, 39);
-    margin: 0;
+    margin-top: 3px;
     padding: 0.2rem;
     padding-top: 0.05rem;
 }
@@ -94,21 +116,17 @@
         gap: 1rem;
     }
     .project-frame {
-        container-type: normal;
         height: auto;
         padding: 1rem;
         text-align: center;
     }
-    .thumbnail-container {
-        float: none;
-        width: fit-content;
-        margin: 0 auto 0.75rem auto;
-    }
     .thumbnail {
+        float: none;
         display: block;
-        min-width: 0;
+        height: auto;
         max-width: 100%;
         max-height: 200px;
+        margin: 0 auto 0.75rem auto;
     }
     .project-frame .project-desc {
         overflow: visible;

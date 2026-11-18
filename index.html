@@ -7,11 +7,11 @@
     <title>brendevr</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/portfolio.css">
-    <link rel="icon" type="image/x-icon" href="https://avatars.githubusercontent.com/u/178747313">
+    <link rel="icon" type="image/x-icon" href="assets/img/pfp.png">
   </head>
   <body>
     <header>
-      <img class="pfp" src="https://avatars.githubusercontent.com/u/178747313">
+      <img class="pfp" src="assets/img/pfp.png">
       <h1>brendevr's all the things site.</h1>
       <p>(mind my html and css)</p>
     </header>
@@ -21,26 +21,20 @@
         <h2>Portfolio</h2>
         <p>My awesome portfolio showcasing my favorite projects.</p>
         <div class="portfolio-container">
-          <div class="project-frame">
-            <div class="thumbnail-container">
-              <img class="thumbnail" src="https://github.com/brendevr/imposster/blob/master/public/icon.png?raw=true">
-            </div>
+          <div class="project-frame github-repo">
+            <img class="thumbnail" src="assets/portfolio_thumb/thumb_imposster.png">
             <div class="text-container">
-              <h3 class="project-title">imposster</h3>
-              <h6 class="project-author"><a href="https://github.com/brendevr">brendevr</a></h6>
+              <h3 class="project-title">imp{oss}ter</h3>
               <p class="project-desc">OSS implementation of the popular party game "Imposter" (sometimes referred to as "Chameleon")</p>
               <div class="button-row">
                 <a class="button" href="https://github.com/brendevr/imposster" target="_blank">View on <strong>GitHub</strong></a>
               </div>
             </div>
           </div>
-          <div class="project-frame">
-            <div class="thumbnail-container">
-              <img class="thumbnail" src="https://github.com/brendevr/docsindark/blob/main/img/google_docs_demo.png?raw=true">
-            </div>
+          <div class="project-frame github-repo">
+            <img class="thumbnail" src="assets/portfolio_thumb/thumb_docsindark.png">
             <div class="text-container">
               <h3 class="project-title">DocsInDark</h3>
-              <h6 class="project-author"><a href="https://github.com/brendevr">brendevr</a></h6>
               <p class="project-desc">Turn Google Docs and Sheets dark. A continuation and expansion of the "DocsAfterDark" project.</p>
               <div class="button-row">
                 <a class="button" href="https://github.com/brendevr/docsindark" target="_blank">View on <strong>GitHub</strong></a>
@@ -48,41 +42,23 @@
             </div>
           </div>
           <div class="project-frame">
-            <div class="thumbnail-container">
-              <img class="thumbnail" src="https://img.itch.zone/aW1nLzIzNDc0NzEyLnBuZw==/180x143%23c/YjH09g.png">
-            </div>
+            <img class="thumbnail" src="assets/portfolio_thumb/thumb_lucky_candle.png">
             <div class="text-container">
               <h3 class="project-title">LUCKY CANDLE</h3>
-              <h6 class="project-author"><a href="https://github.com/brendevr">brendevr</a></h6>
+              <p class="project-author"><b>brendevr</b> w/ artists <b>PieMakesArt</b> & <b>Much More Art</b></p>
               <p class="project-desc">Become the best psychic in the world!</p>
               <div class="button-row">
                 <a class="button" href="https://brendevr.itch.io/lucky-candle" target="_blank">Download on <strong>itch.io</strong></a>
               </div>
             </div>
           </div>
-          <div class="project-frame">
-            <div class="thumbnail-container">
-              <img class="thumbnail" src="https://github.com/brendevr/godot-4-trinkets-and-things/blob/main/preview_images/1.png?raw=true">
-            </div>
+          <div class="project-frame github-repo">
+            <img class="thumbnail" src="assets/portfolio_thumb/thumb_trinkets.png">
             <div class="text-container">
               <h3 class="project-title">Godot 4 Resources</h3>
-              <h6 class="project-author"><a href="https://github.com/brendevr">brendevr</a></h6>
               <p class="project-desc">Handful of shaders, scripts, and other assets for the Godot Engine.</p>
               <div class="button-row">
                 <a class="button" href="https://github.com/brendevr/godot-4-trinkets-and-things" target="_blank">View on <strong>GitHub</strong></a>
-              </div>
-            </div>
-          </div>
-          <div class="project-frame">
-            <div class="thumbnail-container">
-              <img class="thumbnail" src="https://img.itch.zone/aW1hZ2UvNDM4MTUyOS8yNjE1MTU2Ni5wbmc=/347x500/79ninH.png">
-            </div>
-            <div class="text-container">
-              <h3 class="project-title">S3Snake</h3>
-              <h6 class="project-author"><a href="https://github.com/brendevr">brendevr</a></h6>
-              <p class="project-desc">A small slitherio clone made in C# over about 3 days.</p>
-              <div class="button-row">
-                <a class="button" href="https://github.com/brendevr/S3Snake" target="_blank">View on <strong>GitHub</strong></a>
               </div>
             </div>
           </div>
@@ -90,9 +66,10 @@
       </section>
 
       <section class="panel">
-        <h2>Devblogs:</h2>
+        <h2>Devblogs and Guides:</h2>
         <p>Now without monospaced fonts on the blogs, and <b>hovering</b> panels! Fancy.</p>
         <ul>
+          <li><a href="fabric_moddev_guides/homepage.html">Fabric Moddev Guides (1.20.1)</a></li>
           <li><a href="nuke_mod_blog/homepage.html">Nuke Mod (MC 1.20 Forge)</a></li>
         </ul>
       </section>
@@ -119,4 +96,59 @@
       </section>
     </main>
   </body>
+
+  <script>
+    const REPO_STAR_COUNT_STORAGE_KEY = "repoStarCount";
+    const REPO_STAR_COUNT_CACHE = {};
+    const REPO_STAR_COUNT_FROM_STORAGE = JSON.parse(localStorage.getItem(REPO_STAR_COUNT_STORAGE_KEY) ?? "{}");
+    if (REPO_STAR_COUNT_FROM_STORAGE != null) {
+      Object.assign(REPO_STAR_COUNT_CACHE, REPO_STAR_COUNT_FROM_STORAGE);
+    }
+
+    const GITHUB_REPOS = [
+      "brendevr/imposster",
+      "brendevr/docsindark",
+      "brendevr/godot-4-trinkets-and-things",
+    ]
+
+    const PORTFOLIO_GH_ITEMS = document.getElementsByClassName("github-repo");
+
+    for (let i=0; i<GITHUB_REPOS.length; i++) {
+      const repo = GITHUB_REPOS[i];
+      const pfItem = PORTFOLIO_GH_ITEMS[i];
+
+      const stargazerCountPill = createStargazerCountPill();
+      pfItem.prepend(stargazerCountPill);
+
+      updateRepoStars(repo, stargazerCountPill);
+    }
+
+    function createStargazerCountPill() {
+      const div = document.createElement("div");
+      div.className = "stargazer-count";
+      div.innerHTML = `
+        <svg width="16" height="16" fill="#e3b341">
+          <path d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z"></path>
+        </svg>
+        <span>Stars</span><span class="star-count-pill"></span>`;
+      return div;
+    }
+
+    async function updateRepoStars(repo, stargazerCountPill) {
+      let starCount = -1;
+      if (repo in REPO_STAR_COUNT_CACHE && (Date.now() - REPO_STAR_COUNT_CACHE[repo].timeSaved) < 3600000) {
+        starCount = REPO_STAR_COUNT_CACHE[repo].starCount;
+      } else {
+        console.log("Fetching from GH...")
+        const res = await fetch('https://api.github.com/repos/' + repo);
+        const { stargazers_count } = await res.json();
+        starCount = stargazers_count;
+        REPO_STAR_COUNT_CACHE[repo] = { timeSaved: Date.now(), starCount: stargazers_count };
+        localStorage.setItem(REPO_STAR_COUNT_STORAGE_KEY, JSON.stringify(REPO_STAR_COUNT_CACHE));
+      }
+
+      const starCountPill = stargazerCountPill.querySelector(".star-count-pill");
+      starCountPill.textContent = starCount.toString();
+    }
+  </script>
 </html>
