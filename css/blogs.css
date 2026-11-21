@@ -138,6 +138,7 @@
     border: 1px solid white;
     border-spacing: 0 0;
     border-collapse: collapse;
+    overflow-x: scroll;
 }
 
 .blog-post td {
