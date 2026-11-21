@@ -1,7 +1,7 @@
 ---
 title: "Biomes."
 thumbnail: "assets/thumb/biomes.png"
-date: 2026-11-18 09:27:00
+date: 2026-11-20 21:00:00
 description: "Lifting the curtains of obscurity in adding biomes to Minecraft with Fabric."
 edu: true
 homeDirName: 'fabric_moddev_tutorials'
