@@ -48,7 +48,7 @@ So after the biome is decided and the form of the terrain is decided (mountains,
 ## Biome JSON Configs
 
 Now let’s talk about how all of this actually works out in your mod.  
-In <span class="inline-path"><img src="/assets/common/folder.svg">resources / <img src="/assets/common/folder.svg">data / <img src="/assets/common/folder.svg">MOD_ID / <img src="/assets/common/folder.svg">worldgen / <img src="/assets/common/folder.svg">biome</span>, you put your biome configuration file. This is a JSON file that describes a lot about your biome, the most important being:
+In <span class="inline-path"><img src="/assets/common/icons/folder.svg">resources / <img src="/assets/common/icons/folder.svg">data / <img src="/assets/common/icons/folder.svg">MOD_ID / <img src="/assets/common/icons/folder.svg">worldgen / <img src="/assets/common/icons/folder.svg">biome</span>, you put your biome configuration file. This is a JSON file that describes a lot about your biome, the most important being:
 
 * `temperature`: affects grass and foliage color, whether precipitation is rain or snow, and whether water will freeze  
 * `downfall`: also affects grass and foliage color  
