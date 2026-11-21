@@ -17,7 +17,7 @@
     border-radius: 10px;
     margin-bottom: 1rem;
     box-sizing: border-box;
-    background-color: #363636;
+    background-color: #292929;
 }
 
 .devblog-item img {
@@ -78,10 +78,9 @@
 
 .blog-post {
     background-color: #181818;
-    width: 100%;
-    max-width: 56rem;
-    margin: 0 auto;
-    padding: clamp(1rem, 3vw, 2rem);
+    box-sizing: border-box;
+    margin: 3rem calc(30vw - 175px);
+    padding: 2vw;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
     font-family: OpenSans;
@@ -91,7 +90,6 @@
 
 .blog-post a {
     color: #ffa500;
-    text-decoration: none;
 }
 
 .blog-post h1, 
@@ -107,7 +105,7 @@
 }
 
 .blog-post code {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'JetBrains';
     background-color: #2e2e2e;
     padding: 0.2rem 0.4rem;
     border-radius: 5px;
@@ -128,37 +126,89 @@
     margin-top: 20px;
 }
 
+.blog-post ul {
+    line-height: 2.3rem;
+}
+
+.blog-post table {
+    display: block;
+    margin: auto;
+    width: max-content;
+    max-width: 100%;
+    border: 1px solid white;
+    border-spacing: 0 0;
+    border-collapse: collapse;
+}
+
+.blog-post td {
+    border: 1px solid rgba(255, 255, 255, 0.421);
+    padding: 5px;
+}
+
+.blog-post th {
+    padding: 5px;
+    border: 1px solid white;
+}
+
+.blog-post img {
+    display: block;
+    margin: auto;
+}
+
+.inline-path {
+    font-family: 'JetBrains';
+    display: inline;
+    margin: auto;
+    background-color: #292929;
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+}
+
+.inline-path img {
+    display: inline-block;
+    margin-right: 2px;
+    margin-top: -3px;
+    vertical-align: middle;
+    height: 1.2rem;
+}
+
 .imgcap {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 25px;
+    padding-inline: 20px;
+    max-width: 100%;
+    height: min-content;
 }
 
 .imgcap img {
-    margin-right: 2em;
-    max-width: 100%;
+    float: left;
+    max-width: 45%;
     height: auto;
+    margin: 0;
 }
 
-.codecont {
-    border-radius: 5px;
-    font-size: 1.1em;
+.imgcap p {
+    max-width: 55%;
+}
+
+.blog-post pre code {
+    border-radius: 10px;
 }
 
 @media (max-width: 768px) {
     html,
-    body.blog-page {
+    .blog-post {
         overflow-x: clip;
     }
-    body.blog-page {
+    .blog-post {
         margin: 0;
     }
     .blog-post {
         padding: 1.5rem 1rem;
         max-width: 100%;
     }
-    body.blog-page .blog-post {
+    .blog-post {
         max-width: none;
         width: 100%;
         min-height: 100vh;
@@ -170,6 +220,13 @@
     .imgcap {
         flex-direction: column;
         align-items: flex-start;
+    }
+    .imgcap img {
+        max-width: 100%;
+        height: auto;
+    }
+    .imgcap p {
+        max-width: 100%;
     }
 }
 

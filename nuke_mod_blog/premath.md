@@ -1,10 +1,9 @@
 ---
 title: "Pre-Math"
 thumbnail: assets/thumb/pre_math_thumb.png
-date: 2025-06-03
+date: 2025-06-03 10:00:00
 description: "This page is a prerequisite sort of thing for math used throughout the other stuff."
 edu: true
-order: 1
 ---
 
 ## I. Rotation Matrix

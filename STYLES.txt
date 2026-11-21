@@ -1,0 +1,24 @@
+Colors used throughout the site (images, css, etc). Yes, this could be a css file with variables, but this is more dynamic because it serves as a reference for images (png, jpg) and SVGs. Plus, it's not IMPERATIVE that the colors are consistent. This is just a general guide.
+
+GENERAL NOTES:
+- Most graphics should have a transparent background.
+
+PRIMARY FONT: 'JetBrains'
+PRIMARY FONT SIZE: 15 units (SVG)
+
+SECONDARY FILL COLOR: #292929
+TERTIARY FILL COLOR: #454545
+
+PRIMARY OUTLINE COLOR: #ffffff
+
+CORNER RADIUS (css border-radius): 6 units (SVG)
+ARROWHEAD VERTICES: SVG -> stroke-linejoin="round"
+ARROW NOTES:
+    - Arrows should be made up of 90 degree sharp turns.
+
+(OUT)LINE WIDTH: 2 units (SVG)
+
+FILE TREE GRAPHICS (see assets/common/file_tree.svg for how every file tree should look):
+    - Show every folder on its own row (no collapsed/dotted folders). Only include folders needed to reach the target file.
+    - Folder icon: copied from assets/common/folder.svg
+    - File icons: copied from assets/common/*

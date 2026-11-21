@@ -1,10 +1,9 @@
 ---
 title: "Part A: The Pillar of Smoke"
 thumbnail: assets/thumb/smoke_pillar_thumb.png
-date: 2025-06-03
+date: 2025-06-03 12:00:00
 description: "This one is simple. Anyone can understand it! Its just smoke. That goes up. Thats it."
 edu: true
-order: 2
 ---
 
 Note: After reading this, check out [Part B: The Swirly Gases](swirlygases.html) for more details.
@@ -29,11 +28,14 @@ The "pillar" of the mushroom cloud must achieve two things: it must curve upward
 To simulate this, we need a variable that updates the value of `x` over time. This variable is called `tickCounter`, and it increments with each tick.
 We can use this value as the input to our function, which will give us the height of the particle at any given time. Here's an example:
 
-<pre><code class="language-java codecont">private int tickCounter;</code></pre>
+```java
+private int tickCounter;
+```
 
 This variable can be used as the 'x' value in the above function. I recommend adjusting the function and `elapsedTicks` to make the particle speed look smooth and consistent. Here's how I implemented it:
 
-<pre><code class="language-java codecont">public void partA() {
+```java
+public void partA() {
     double timeInSeconds = (double) tickCounter / 20;
     double particleHeight = Math.pow(3, 2 * timeInSeconds - 3);
     double previousParticleHeight = Math.pow(3, 2 * timeInSeconds - 3 - 0.1);
@@ -60,7 +62,8 @@ This variable can be used as the 'x' value in the above function. I recommend ad
 
     Vector2D rotatedXZ = Math2.rotateCoordinate2D(relativeX, relativeZ, rotationAngle).offset(offsetX, offsetZ).offset(originX, originZ);
     this.setPos(rotatedXZ.x, originY + relativeY, rotatedXZ.y);
-}</code></pre>
+}
+```
 
 ### Explanation:
 

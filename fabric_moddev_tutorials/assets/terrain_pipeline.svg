@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 612" width="720" height="612" font-family="JetBrains" font-size="15">
+  <defs>
+    <path id="head" d="M-6,-11 L6,-11 L0,-1 Z" fill="#c8c8c8" stroke="#c8c8c8" stroke-width="2" stroke-linejoin="round"/>
+  </defs>
+  <g fill="none" stroke="#c8c8c8" stroke-width="2" stroke-linejoin="round">
+    <path d="M360,84 V103"/>
+    <path d="M360,156 V184"/>
+    <path d="M360,184 H190 V203"/>
+    <path d="M360,184 H530 V203"/>
+    <path d="M190,256 V284 H530 V256"/>
+    <path d="M360,284 V303"/>
+    <path d="M360,356 V375"/>
+    <path d="M360,428 V447"/>
+    <path d="M360,500 V519"/>
+  </g>
+  <use href="#head" x="360" y="111"/>
+  <use href="#head" x="190" y="211"/>
+  <use href="#head" x="530" y="211"/>
+  <use href="#head" x="360" y="311"/>
+  <use href="#head" x="360" y="383"/>
+  <use href="#head" x="360" y="455"/>
+  <use href="#head" x="360" y="527"/>
+  <g fill="#292929" stroke="#c8c8c8" stroke-width="2">
+    <rect x="210" y="40"  width="300" height="44" rx="6"/>
+    <rect x="210" y="112" width="300" height="44" rx="6"/>
+    <rect x="40"  y="212" width="300" height="44" rx="6"/>
+    <rect x="380" y="212" width="300" height="44" rx="6"/>
+    <rect x="210" y="312" width="300" height="44" rx="6"/>
+    <rect x="210" y="384" width="300" height="44" rx="6"/>
+    <rect x="210" y="456" width="300" height="44" rx="6"/>
+    <rect x="210" y="528" width="300" height="44" rx="6"/>
+  </g>
+  <g fill="#ffffff" text-anchor="middle">
+    <text x="360" y="67">base noise values</text>
+    <text x="360" y="139">shape formula (offset / depth)</text>
+    <text x="190" y="239">biome lookup</text>
+    <text x="530" y="239">final terrain form</text>
+    <text x="360" y="339">form fill</text>
+    <text x="360" y="411">surface rules</text>
+    <text x="360" y="483">carvers</text>
+    <text x="360" y="555">features</text>
+  </g>
+</svg>

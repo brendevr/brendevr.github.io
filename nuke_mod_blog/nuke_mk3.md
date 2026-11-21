@@ -1,10 +1,9 @@
 ---
 title: "Nuke Mk.3"
 thumbnail: assets/thumb/explosion.png
-date: 2025-06-11
+date: 2025-06-11 12:00:00
 description: "Nukes are awesome, and instant. But in minecraft, they are slowwww. Can I fix that? Or at least make it better?"
 edu: false
-order: 4
 ---
 
 ## The Beginning (Mk.1)
@@ -45,7 +44,7 @@ The next quick thing I added to conclude Mk.3 was chunk sorting. Basically, as I
 
 And with Mk.3, my Tsarmark went from 14 minutes to 2.5! Awesome.
 
-Hey, thanks for reading all this. Or, if you just scrolled to the end, my Java file is attached as well as the credits below.
+Hey, thanks for reading all this. Or, if you just scrolled to the end, my Java file can be found [here.](https://github.com/brendevr/Spikes-Nukes-Mod/blob/main/src/main/java/com/stbstudios/spikesnukes/mechanics/explosives/bases/NukeBase.java)
 
 ---
 

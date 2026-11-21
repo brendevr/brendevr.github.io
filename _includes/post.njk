@@ -8,27 +8,17 @@
         <link rel="stylesheet" href="/css/blogs.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/vs2015.min.css">
     </head>
-    <body class="blog-page">
-        <div class="blog-post">
-            <a href="/nuke_mod_blog/homepage.html">Back</a>
-            <h1>{{ title | safe }}</h1>
-            <p>{{ description | safe }}{% if extraDescription %}<br>{{ extraDescription | safe }}{% endif %}</p>
-            <hr>
+    <body class="blog-post">
+        <a href="/{{ homeDirName }}/homepage.html">Back</a>
+        <h1>{{ title | safe }}</h1>
+        <p>{{ description | safe }}{% if extraDescription %}<br>{{ extraDescription | safe }}{% endif %}</p>
+        <hr>
 
-            {{ content | safe }}
+        {{ content | safe }}
 
-            {% if attachments[page.fileSlug] %}
-            <div class="attachments">
-                {% for file in attachments[page.fileSlug] %}
-                <a class="attachment" href="/nuke_mod_blog/assets/project_files/{{ page.fileSlug }}/{{ file }}">{{ file }}</a>
-                {% endfor %}
-            </div>
-            {% endif %}
-
-            <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
-            <script>
-                hljs.highlightAll();
-            </script>
-        </div>
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
     </body>
 </html>

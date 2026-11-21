@@ -1,10 +1,9 @@
 ---
 title: "I hate OBJs, and you should too."
 thumbnail: assets/thumb/objs_suck_thumb.png
-date: 2025-06-13
+date: 2025-06-13 12:00:00
 description: "But maybe I can help you out, with what I learned from 10 hours of debugging one freaking model."
 edu: true
-order: 5
 ---
 
 ## Making a block!
@@ -14,11 +13,13 @@ straight-forward. You are going to need a `ModBlocks` class, as well as a class 
 the block I set up, which is `FatManNuke`. Next, setup your block class, or `FatManNuke` in this example. Here is the code for it,
 I will explain everything after:
 
-<pre><code class="language-java codecont">public class FatManNuke extends Block {
+```java
+public class FatManNuke extends Block {
     public FatManNuke(Properties properties) {
         super(properties);
     }
-}</code></pre>
+}
+```
 
 This is super simple. This is just the class for the block in game. The only time you wouldn't need a class for the custom block is if you have no special logic
 for that block. This is unlikely, unless you are making something like a steel block which has no custom logic, and only needs basic vanilla block behaviour. But
@@ -29,11 +30,12 @@ likely, if you are using a custom OBJ model, then you will be needed custom defi
 Now that you have a block, you need to register it. Basically tell Forge/Minecraft that "Hey, I made a block. Put it in the game." To do that, just set up
 a class like so, under the same package that your block class is under.
 
-<pre><code class="language-java codecont">public class ModBlocks {
-    public static final DeferredRegister&lt;Block&gt; BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SpikesNukesMod.MOD_ID);
+```java
+public class ModBlocks {
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SpikesNukesMod.MOD_ID);
 
-    public static final RegistryObject&lt;Block&gt; FAT_MAN_NUKE = BLOCKS.register("fat_man_block",
-            () -&gt; new FatManNuke(BlockBehaviour.Properties
+    public static final RegistryObject<Block> FAT_MAN_NUKE = BLOCKS.register("fat_man_block",
+            () -> new FatManNuke(BlockBehaviour.Properties
                     .copy(Blocks.OBSIDIAN)
                     .strength(1.5f)
                     .sound(SoundType.STONE)
@@ -43,7 +45,8 @@ a class like so, under the same package that your block class is under.
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
-}</code></pre>
+}
+```
 
 And thats it! All you gotta do here is make a `DeferredRegister`, which is basically a container that you fill up with stuff to register,
 and then at the end batch register everything in the container. Hence the 'deferred' part of it. As for the RegistryObject, that is just the behaviour for
@@ -52,7 +55,8 @@ the block. `.copy` takes in a block from `Blocks`, and copies most of its behavi
 However, if you are making a big mod with lots of blocks, having all these properties in the ModBlocks class will pollute it, quickly. Especially if those
 blocks have lots of properties. In this case, you can actually move the BlockBehaviour.Properties data to the blocks class:
 
-<pre><code class="language-java codecont">public class FatManNuke extends Block implements EntityBlock {
+```java
+public class FatManNuke extends Block implements EntityBlock {
     public static final BlockBehaviour.Properties PROPERTIES = BlockBehaviour.Properties
             .copy(Blocks.OBSIDIAN)
             .strength(1.5f)
@@ -61,19 +65,22 @@ blocks have lots of properties. In this case, you can actually move the BlockBeh
     public FatManNuke() {
         super(PROPERTIES);
     }
-}</code></pre>
+}
+```
 
 The basis of it is that you remove the constructor paramater for the block, and feed its super the PROPERTIES you defined. Then you new ModBlocks would look like:
 
-<pre><code class="language-java codecont">public class ModBlocks {
-    public static final DeferredRegister&lt;Block&gt; BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SpikesNukesMod.MOD_ID);
+```java
+public class ModBlocks {
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, SpikesNukesMod.MOD_ID);
 
-    public static final RegistryObject&lt;Block&gt; FAT_MAN_NUKE = BLOCKS.register("fat_man_block", FatManNuke::new);
+    public static final RegistryObject<Block> FAT_MAN_NUKE = BLOCKS.register("fat_man_block", FatManNuke::new);
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
     }
-}</code></pre>
+}
+```
 
 Now that looks a lot cleaner.
 
@@ -98,28 +105,33 @@ you are going to spend hours debugging, guaranteed. You need to setup a structur
 Now all your resource files are in place. Great. Next, you need to fill in the JSON file and make a slight edit to the MTL file. In your json file under
 the blockstates/ folder, put this in:
 
-<pre><code>{
+```json
+{
     "variants": {
         "": {
             "model": "spikesnukes:block/fat_man_block"
         }
     }
-}</code></pre>
+}
+```
 
 And then the json in your models/blocks is going to be:
 
-<pre><code>{
+```json
+{
     "loader": "forge:obj",
     "model": "spikesnukes:models/block/fatman_r1.obj",
     "flip-v": true
-}</code></pre>
+}
+```
 
 Now lucky for us, nothing ever works the way you want it to in mod development, so likely flip-v won't do anything, no matter if its true or false. What it is
 supposed to do (when set to true) is flip the UVs do that you don't have an upside down texture. But, it doesnt. So, you may have to go through each of your
 texture files and perform a 'flip vertically' transformation on them in paint.net or GIMP or whatever. Last thing, you need to edit your mtl file in models/blocks.
 It will look something like this:
 
-<pre><code># Blender 4.0.2 MTL File: 'fatman_r1.blend'
+```plaintext
+# Blender 4.0.2 MTL File: 'fatman_r1.blend'
 # www.blender.org
 
 newmtl FatMan
@@ -130,13 +142,14 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd spikesnukes:block/fatman_tex</code></pre>
+map_Kd spikesnukes:block/fatman_tex
+```
 
 The part you need to change is the map_Kd. it will probably have something like 'texture.png' next to it. You need to change that to `modid:block/texture`
 If you do not do this, you will not have a texture.
 
 ## Good luck.
 
-That concludes this lengthy tutorial. If you have any questions or errors, check out the full files for my mod either down below or at my github Repo. If something still
+That concludes this lengthy tutorial. If you have any questions or errors, check out the full files for my mod at my [github repo](https://github.com/brendevr/Spikes-Nukes-Mod/tree/main). If something still
 doesnt work, shoot me an email, listed on the home page of this website. Good luck to you, happy modeling.
 

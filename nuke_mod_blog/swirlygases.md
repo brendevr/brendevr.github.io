@@ -1,11 +1,10 @@
 ---
 title: "Part B: The Swirling Gases"
 thumbnail: assets/thumb/swirly_gases_thumn.png
-date: 2025-06-03
+date: 2025-06-03 14:00:00
 description: "Nuclear mushroom clouds are cool (well actually really warm) and swirl around. But how can we simulate that... in minecraft?"
 extraDescription: "This guide lays out the mathematical setup for creating a mushroom cloud. Let’s get swirling."
 edu: true
-order: 3
 ---
 
 Note: Before diving in, check out [Part A: The Smoke Pillar](smokepillar.html) for context.
@@ -42,19 +41,20 @@ We use sine and cosine to calculate how much each particle moves. And since desc
         In Minecraft, if you call <code>super.tick()</code> before displacement, it smooths out movement, so even Set 2 will look like it has way more than 10 points.
         Also, the more points you add, the bigger the circle gets. This happens because P' = P + (sin(angle), cos(angle)), and a smaller increment moves P' farther.
         You could "fix" this with ratios or something fancy, but honestly, just test it in-game. Too big? Divide the displacement value. Too small? Multiply it.
-        Math is constant, but art is a process. You’ll have to tweak things. I highly recommend adding dev commands to adjust radius values live in-game, it'll save you from the dreaded
-        <span style="white-space: nowrap;">'Close Game -> Change Variable -> Open Game -> Test -> Repeat'.</span>
+        Math is constant, but art is a process. You’ll have to tweak things. I highly recommend adding dev commands to adjust radius values live in-game, it'll save you from the dreaded<br>
+       'Close Game -> Change Variable -> Open Game -> Test -> Repeat'.
     </p>
 </div>
 
 Now this is a lot of confusing math, so if you learn by example or by good ol' copy-paste, here you go:
 
-<pre><code class="language-java codecont">public void partB() {
+```java
+public void partB() {
     swirlAngle += swirlIncrement;
-    if (swirlAngle &gt;= 2 * Math.PI) swirlAngle -= 2 * Math.PI;
+    if (swirlAngle >= 2 * Math.PI) swirlAngle -= 2 * Math.PI;
 
     float rStart, rEnd, gStart, gEnd, bStart, bEnd;
-    if (swirlAngle &lt; Math.PI) {
+    if (swirlAngle < Math.PI) {
         rStart = 255; rEnd = 115;
         gStart = 75; gEnd = 115;
         bStart = 0; bEnd = 115;
@@ -78,4 +78,5 @@ Now this is a lot of confusing math, so if you learn by example or by good ol' c
 
     Vector2D rotatedXZ = Math2.rotateCoordinate2D(relativeX, relativeZ, rotationAngle).offset(offsetX, offsetZ).offset(originX, originZ);
     this.setPos(rotatedXZ.x, originY + relativeY, rotatedXZ.y);
-}</code></pre>
+}
+```

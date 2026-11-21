@@ -1,0 +1,43 @@
+---
+permalink: /fabric_moddev_tutorials/homepage.html
+layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fabric Moddev Tutorials (1.20.1)</title>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../css/blogs.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/vs2015.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <a href="../index.html">Home</a>
+
+        <h1>Fabric Moddev Tutorials (1.20.1)</h1>
+
+        <p>Standalone Fabric 1.20.1 moddev guides. Completely free and adless.</p>
+
+        <a class="attachment" href="https://www.youtube.com/playlist?list=PLd2TO3-_xbEI" style="margin: 0 0 10px 0;">Video Tutorials (possibly not complete)</a>
+
+        <div class="devblog-container">
+{%- for post in collections.fabric_moddev_tutorials %}
+            <a href="{{ post.page.fileSlug }}.html">
+                <div class="devblog-item">
+                    <img src="{{ post.data.thumbnail }}">
+                    <div class="devblog-text">
+                        <div class="devblog-title-block">
+                            <h1>{{ post.data.title | safe }}</h1>
+                            <h3>{{ post.date | slashDate }}</h3>
+                        </div>
+                        <hr>
+                        <p>{{ post.data.description | safe }}</p>
+                    </div>
+                </div>
+            </a>
+{%- endfor %}
+        </div>
+    </body>
+</html>
